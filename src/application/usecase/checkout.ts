@@ -14,9 +14,9 @@ import ProductRepositoryDatabase from "../../ProductRepositoryDatabase";
 export default class Checkout {
 
     constructor(readonly currencyGateway: CurrencyGateway = new CurrencyGatewayHttp(),
-                readonly productRepository: ProductRepository = new ProductRepositoryDatabase(),
-                readonly couponRepository: CouponRepository = new CouponRepositoryDatabase(),
-                readonly orderRepository: OrderRepository = new OrderRepositoryDatabase()
+                readonly productRepository: ProductRepository,
+                readonly couponRepository: CouponRepository,
+                readonly orderRepository: OrderRepository
                 ) {
     }
                 

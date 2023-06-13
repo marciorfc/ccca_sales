@@ -1,13 +1,21 @@
 import SimulateFreight from "../src/application/usecase/SimulateFreight";
+import Connection from "../src/Connection";
+import PgPromise from "../src/PgPromiseAdapter";
+import ProductRepositoryDatabase from "../src/ProductRepositoryDatabase";
 
 let simulateFreight: SimulateFreight;
+let connection: Connection;
 
 
 beforeEach(() => {
-    simulateFreight = new SimulateFreight();
+    connection = new PgPromise();
+    const productRepository = new ProductRepositoryDatabase(connection);
+    simulateFreight = new SimulateFreight(productRepository);
 });
 
-
+afterEach(async () => {
+    await connection.close();
+})
 
 
 

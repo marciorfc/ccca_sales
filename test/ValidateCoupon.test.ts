@@ -1,11 +1,21 @@
 import ValidateCoupon from "../src/application/usecase/ValidateCoupon";
+import Connection from "../src/Connection";
+import CouponRepositoryDatabase from "../src/CouponRepositoryDatabase";
+import PgPromise from "../src/PgPromiseAdapter";
 
 
 let validateCoupon: ValidateCoupon;
+let connection: Connection;
 
 
 beforeEach(() => {
-    validateCoupon = new ValidateCoupon();
+    connection = new PgPromise();
+    const couponRepository = new CouponRepositoryDatabase(connection);
+    validateCoupon = new ValidateCoupon(couponRepository);
+});
+
+afterEach(async () => {
+    await connection.close();
 });
 
 test("Deve validar um cupom de desconto válido", async function() {

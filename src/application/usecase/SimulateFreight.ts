@@ -4,7 +4,7 @@ import ProductRepositoryDatabase from "../../ProductRepositoryDatabase";
 
 export default class SimulateFreight {
 
-    constructor(readonly productRepository: ProductRepository = new ProductRepositoryDatabase()) {
+    constructor(readonly productRepository: ProductRepository) {
     }
     
     async execute(input: Input): Promise<Output> {
