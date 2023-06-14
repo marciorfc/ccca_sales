@@ -13,6 +13,7 @@ import PgPromise from "../src/PgPromiseAdapter";
 import Connection from "../src/Connection";
 import CouponRepository from "../src/CouponRepository";
 import OrderRepository from "../src/OrderRepository";
+import AxiosAdapter from "../src/AxiosAdapter";
 
 let checkout: Checkout;
 let getOrder: GetOrder;
@@ -23,7 +24,8 @@ let orderRepository: OrderRepository;
 
 beforeEach(() => {
     connection = new PgPromise();
-    const currencyGateway = new CurrencyGatewayHttp();
+    const httpClient = new AxiosAdapter();
+    const currencyGateway = new CurrencyGatewayHttp(httpClient);
     const productRepository = new ProductRepositoryDatabase(connection);
     couponRepository = new CouponRepositoryDatabase(connection);
     orderRepository = new OrderRepositoryDatabase(connection);

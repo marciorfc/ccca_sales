@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import Checkout from "./application/usecase/checkout";
+import AxiosAdapter from "./AxiosAdapter";
 import CouponRepositoryDatabase from "./CouponRepositoryDatabase";
 import CurrencyGatewayHttp from "./CurrencyGatewayHttp";
 import OrderRepositoryDatabase from "./OrderRepositoryDatabase";
@@ -12,7 +13,8 @@ app.use(express.json());
 app.post("/checkout", async (req: Request, res: Response) => {
     try{
         const connection = new PgPromise();
-        const currencyGateway = new CurrencyGatewayHttp();
+        const httpClient = new AxiosAdapter();
+        const currencyGateway = new CurrencyGatewayHttp(httpClient);
         const productRepository = new ProductRepositoryDatabase(connection);
         const couponRepository = new CouponRepositoryDatabase(connection);
         const orderRepository = new OrderRepositoryDatabase(connection);

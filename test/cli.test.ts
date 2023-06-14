@@ -1,4 +1,5 @@
 import Checkout from "../src/application/usecase/checkout";
+import AxiosAdapter from "../src/AxiosAdapter";
 import CLIController from "../src/CLIController";
 import CLIHandler from "../src/CLIHandler";
 import CouponRepositoryDatabase from "../src/CouponRepositoryDatabase";
@@ -9,7 +10,8 @@ import ProductRepositoryDatabase from "../src/ProductRepositoryDatabase";
 
 test("Deve testar o cli", async function() {
     const connection = new PgPromise();
-    const currencyGateway = new CurrencyGatewayHttp();
+    const httpClient = new AxiosAdapter();
+    const currencyGateway = new CurrencyGatewayHttp(httpClient);
     const productRepository = new ProductRepositoryDatabase(connection);
     const couponRepository = new CouponRepositoryDatabase(connection);
     const orderRepository = new OrderRepositoryDatabase(connection);
