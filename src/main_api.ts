@@ -1,13 +1,13 @@
 import Checkout from "./application/usecase/checkout";
-import AxiosAdapter from "./AxiosAdapter";
-import CouponRepositoryDatabase from "./CouponRepositoryDatabase";
-import CurrencyGatewayHttp from "./CurrencyGatewayHttp";
-import ExpressAdapter from "./ExpressAdapter";
-import HapiHttpServer from "./HapiAdapter";
-import HttpController from "./HttpController";
-import OrderRepositoryDatabase from "./OrderRepositoryDatabase";
-import PgPromise from "./PgPromiseAdapter";
-import ProductRepositoryDatabase from "./ProductRepositoryDatabase";
+import AxiosAdapter from "./infra/http/AxiosAdapter";
+import CouponRepositoryDatabase from "./infra/repository/CouponRepositoryDatabase";
+import CurrencyGatewayHttp from "./infra/gateway/CurrencyGatewayHttp";
+import ExpressAdapter from "./infra/http/ExpressAdapter";
+import HapiHttpServer from "./infra/http/HapiAdapter";
+import HttpController from "./infra/http/HttpController";
+import OrderRepositoryDatabase from "./infra/repository/OrderRepositoryDatabase";
+import PgPromise from "./infra/database/PgPromiseAdapter";
+import ProductRepositoryDatabase from "./infra/repository/ProductRepositoryDatabase";
 
  function getCheckout() : Checkout {
     const connection = new PgPromise();

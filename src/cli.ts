@@ -1,10 +1,10 @@
 import Checkout from "./application/usecase/checkout";
-import AxiosAdapter from "./AxiosAdapter";
-import CouponRepositoryDatabase from "./CouponRepositoryDatabase";
-import CurrencyGatewayHttp from "./CurrencyGatewayHttp";
-import OrderRepositoryDatabase from "./OrderRepositoryDatabase";
-import PgPromise from "./PgPromiseAdapter";
-import ProductRepositoryDatabase from "./ProductRepositoryDatabase";
+import AxiosAdapter from "./infra/http/AxiosAdapter";
+import CouponRepositoryDatabase from "./infra/repository/CouponRepositoryDatabase";
+import CurrencyGatewayHttp from "./infra/gateway/CurrencyGatewayHttp";
+import OrderRepositoryDatabase from "./infra/repository/OrderRepositoryDatabase";
+import PgPromise from "./infra/database/PgPromiseAdapter";
+import ProductRepositoryDatabase from "./infra/repository/ProductRepositoryDatabase";
 
 
 const input : Input = {

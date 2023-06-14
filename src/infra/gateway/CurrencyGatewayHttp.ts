@@ -1,5 +1,5 @@
-import CurrencyGateway from "./CurrencyGateway";
-import HttpClient from "./HttpClient";
+import CurrencyGateway from "../../application/gateway/CurrencyGateway";
+import HttpClient from "../http/HttpClient";
 
 export default class CurrencyGatewayHttp implements CurrencyGateway {
 

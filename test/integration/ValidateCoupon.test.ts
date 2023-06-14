@@ -1,7 +1,7 @@
-import ValidateCoupon from "../src/application/usecase/ValidateCoupon";
-import Connection from "../src/Connection";
-import CouponRepositoryDatabase from "../src/CouponRepositoryDatabase";
-import PgPromise from "../src/PgPromiseAdapter";
+import ValidateCoupon from "../../src/application/usecase/ValidateCoupon";
+import Connection from "../../src/infra/database/Connection";
+import CouponRepositoryDatabase from "../../src/infra/repository/CouponRepositoryDatabase";
+import PgPromise from "../../src/infra/database/PgPromiseAdapter";
 
 
 let validateCoupon: ValidateCoupon;

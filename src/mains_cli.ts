@@ -1,13 +1,13 @@
 import Checkout from "./application/usecase/checkout";
-import AxiosAdapter from "./AxiosAdapter";
-import CLIController from "./CLIController";
-import CLIHandler from "./CLIHandler";
-import CLIHandlerNode from "./CLIHandlerNode";
-import CouponRepositoryDatabase from "./CouponRepositoryDatabase";
-import CurrencyGatewayHttp from "./CurrencyGatewayHttp";
-import OrderRepositoryDatabase from "./OrderRepositoryDatabase";
-import PgPromise from "./PgPromiseAdapter";
-import ProductRepositoryDatabase from "./ProductRepositoryDatabase";
+import AxiosAdapter from "./infra/http/AxiosAdapter";
+import CLIController from "./infra/cli/CLIController";
+import CLIHandler from "./infra/cli/CLIHandler";
+import CLIHandlerNode from "./infra/cli/CLIHandlerNode";
+import CouponRepositoryDatabase from "./infra/repository/CouponRepositoryDatabase";
+import CurrencyGatewayHttp from "./infra/gateway/CurrencyGatewayHttp";
+import OrderRepositoryDatabase from "./infra/repository/OrderRepositoryDatabase";
+import PgPromise from "./infra/database/PgPromiseAdapter";
+import ProductRepositoryDatabase from "./infra/repository/ProductRepositoryDatabase";
 
 const connection = new PgPromise();
 const httpClient = new AxiosAdapter();

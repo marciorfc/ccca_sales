@@ -1,5 +1,5 @@
-import Cpf from "../src/domain/entity/Cpf";
-import { validate } from "../src/validator";
+import Cpf from "../../src/domain/entity/Cpf";
+import { validate } from "../../src/validator";
 
 test.each([
     "407.302.170-27",

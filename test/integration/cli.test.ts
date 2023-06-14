@@ -1,12 +1,12 @@
-import Checkout from "../src/application/usecase/checkout";
-import AxiosAdapter from "../src/AxiosAdapter";
-import CLIController from "../src/CLIController";
-import CLIHandler from "../src/CLIHandler";
-import CouponRepositoryDatabase from "../src/CouponRepositoryDatabase";
-import CurrencyGatewayHttp from "../src/CurrencyGatewayHttp";
-import OrderRepositoryDatabase from "../src/OrderRepositoryDatabase";
-import PgPromise from "../src/PgPromiseAdapter";
-import ProductRepositoryDatabase from "../src/ProductRepositoryDatabase";
+import Checkout from "../../src/application/usecase/checkout";
+import AxiosAdapter from "../../src/infra/http/AxiosAdapter";
+import CLIController from "../../src/infra/cli/CLIController";
+import CLIHandler from "../../src/infra/cli/CLIHandler";
+import CouponRepositoryDatabase from "../../src/infra/repository/CouponRepositoryDatabase";
+import CurrencyGatewayHttp from "../../src/infra/gateway/CurrencyGatewayHttp";
+import OrderRepositoryDatabase from "../../src/infra/repository/OrderRepositoryDatabase";
+import PgPromise from "../../src/infra/database/PgPromiseAdapter";
+import ProductRepositoryDatabase from "../../src/infra/repository/ProductRepositoryDatabase";
 
 test("Deve testar o cli", async function() {
     const connection = new PgPromise();

@@ -1,4 +1,4 @@
-import Checkout from "./application/usecase/checkout";
+import Checkout from "../../application/usecase/checkout";
 import CLIHandler from "./CLIHandler";
 
 export default class CLIController {

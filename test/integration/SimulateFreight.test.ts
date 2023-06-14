@@ -1,7 +1,7 @@
-import SimulateFreight from "../src/application/usecase/SimulateFreight";
-import Connection from "../src/Connection";
-import PgPromise from "../src/PgPromiseAdapter";
-import ProductRepositoryDatabase from "../src/ProductRepositoryDatabase";
+import SimulateFreight from "../../src/application/usecase/SimulateFreight";
+import Connection from "../../src/infra/database/Connection";
+import PgPromise from "../../src/infra/database/PgPromiseAdapter";
+import ProductRepositoryDatabase from "../../src/infra/repository/ProductRepositoryDatabase";
 
 let simulateFreight: SimulateFreight;
 let connection: Connection;

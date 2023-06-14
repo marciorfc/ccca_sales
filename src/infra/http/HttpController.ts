@@ -1,4 +1,4 @@
-import Checkout from "./application/usecase/checkout";
+import Checkout from "../../application/usecase/checkout";
 import HttpServer from "./HttpServer";
 
 export default class HttpController {

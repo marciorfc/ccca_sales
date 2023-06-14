@@ -1,6 +1,6 @@
-import Connection from "./Connection";
-import Product from "./domain/entity/Product";
-import ProductRepository from "./ProductRepository";
+import Connection from "../database/Connection";
+import Product from "../../domain/entity/Product";
+import ProductRepository from "../../application/repository/ProductRepository";
 
 export default class ProductRepositoryDatabase implements ProductRepository {
 
