@@ -1,5 +1,0 @@
-SOLID
-
-Open/Closed
-
-Open for extension / Closed for modification
