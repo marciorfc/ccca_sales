@@ -1,8 +1,7 @@
-import FreightCalculator from "../../domain/entity/FreightCalculator";
 import ProductRepository from "../repository/ProductRepository";
-import ProductRepositoryDatabase from "../../infra/repository/ProductRepositoryDatabase";
 
-export default class GetProduct {
+
+export default class GetProducts {
 
     constructor(readonly productRepository: ProductRepository) {
     }
@@ -10,6 +9,9 @@ export default class GetProduct {
     async execute(): Promise<Output> {
         const output: Output = [];
         const products = await this.productRepository.getProducts();
+        for (const product of products) {
+            output.push({ idProduct: product.idProduct, description: product.description, price: product.price });
+        }
         return output;
     }
 }
@@ -19,4 +21,4 @@ type Output = {
     idProduct: number,
     description: string,
     price: number
-}
+}[];
